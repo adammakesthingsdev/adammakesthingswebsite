@@ -1,0 +1,46 @@
+
+.list {
+    list-style: none;
+    padding-left: 0px;
+    text-decoration: none;
+}
+.list *{
+    text-decoration: none;
+}
+
+.title{
+    font-family: var(--font-poppins);
+    font-size: 3rem;
+    color:white;
+}
+
+.blogBody{
+    font-family: "Inter",var(--font-inter);
+    font-size: 1rem;
+    font-weight:400;
+    color:lightgray;
+}
+
+.blogBody:hover{
+    color:white;
+}
+
+.hr{
+    border-top: 1px solid #49bc94;
+}
+
+.date{
+    font-family: var(--font-poppins);
+    font-size: 1rem;
+    font-weight:400;
+
+}
+
+.textContent{
+    display:flex;
+    flex-direction: column;
+    width:90%;
+    max-width:60rem;
+    flex:1;
+
+}

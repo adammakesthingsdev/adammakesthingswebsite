@@ -1,0 +1,61 @@
+.textContent{
+    display:flex;
+    flex-direction: column;
+    width:90%;
+    max-width:60rem;
+    flex:1;
+
+}
+
+.title{
+    font-family: var(--font-poppins);
+    font-size: 3rem;
+    color:white;
+}
+
+.author{
+    font-family: var(--font-poppins);
+    font-size: 1.5rem;
+    font-weight:400;
+    margin:0;
+    color:white;
+}
+
+.date{
+    font-family: var(--font-poppins);
+    font-size: 1rem;
+    font-weight:400;
+    color:white;
+}
+
+.blogBody{
+    font-family: "Inter",var(--font-inter);
+    font-size: 1rem;
+    font-weight:400;
+    color:white;
+}
+
+.blogBody a{
+    color:#49bc94;
+}
+
+.blogBody code{
+    background:#181818;
+    max-width: 95%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display: inline-block;
+}
+
+.blogBody h3{
+    text-decoration: underline;
+    font-family: var(--font-poppins);
+}
+.blogBody h1{
+    font-size: 2rem;
+    font-family: var(--font-poppins);
+}
+
+.blogBody a:hover{
+    color:lightgray;
+}

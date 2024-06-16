@@ -1,0 +1,16 @@
+html, body {
+
+  padding: 0;
+  background: #0f0d0d;
+  margin: 0;
+  max-width: 100%;
+  font-size:16;
+
+  
+  } 
+
+.popText{
+  color:aquamarine;
+  font-family: var(--font-poppins);
+  font-weight:400;
+}

@@ -1,0 +1,77 @@
+.contactBox{
+    display:flex;
+    max-width:40rem;
+    width:90%;
+    justify-content: top;
+    align-items: center;
+    flex-direction: column;
+    flex:1;
+    color:white;
+}
+
+.contactBox h1{
+    font-size: 2rem;
+    font-family: var(--font-poppins);
+}
+
+.linkHolder{
+    border: 3px solid #49bc94;
+    transition:background-color 0.25s, transform 0.25s;
+    width:90%;
+    height:12vh;
+    border-radius: 1rem;
+    background-color: lightgray;
+    display:flex;
+    justify-content: left;
+    margin-bottom:3vh;
+    align-items: center;
+    text-decoration:none;
+}
+
+.icon{
+    color:black;
+    margin-left:5%;
+    margin-right:5%;
+    max-height:75%;
+    min-height:30%;
+    width:min-content;
+    height:10vw;
+    display:flex;
+    flex:1;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameHolder{
+    height:75%;
+    width:75%;
+    display:flex;
+
+    margin-right:5%;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nameHolder h3{
+    font-family: var(--font-poppins);
+    color:black;
+    font-size: min(1.5em,3.75vw);
+    margin:0;
+    font-weight:500;
+    margin-bottom:2%;
+}
+
+.nameHolder h4{
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size:min(1em,5vw);
+    color:Black;
+    flex:none;
+    margin:0;
+}
+
+.linkHolder:hover{
+    background-color: white;
+    transition:background-color 0.25s;
+}

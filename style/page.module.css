@@ -1,0 +1,164 @@
+.header {
+    height:4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222222;
+    border-bottom:3px solid #49bc94;
+    color: white;
+    font-size: 1rem;
+    font-family: var(--font-poppins);
+    font-weight:400;
+  }
+
+.bodyText{
+    color: white;
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: 2vh;
+    margin-bottom: 30px;
+    text-indent: 50px;
+    line-height: 1.8;
+    white-space: pre-wrap
+}
+
+.stickyBox{
+    position: sticky;
+    width:100%;
+    top: 0;
+}
+
+.footer{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    bottom:0;
+    width:100%;
+    height:10vh;
+    background: #222222;
+    border-top: 3px solid #49bc94;
+
+}
+
+.footerList{
+    width:fit-content;
+    height:60%;
+    display:flex;
+    text-align: center;
+    align-items: center;
+    padding:0;
+    margin:0;
+    list-style-type: none;
+}
+
+
+.footerLinks{
+    display: inline-block;
+    padding-inline:min(2rem,4vw);
+    text-decoration: none;
+    padding:auto;
+    flex:1;
+
+
+
+}
+
+.a:visited{
+    color:gray;
+}
+
+.a:hover{
+    color:white;
+}
+
+.a:link{
+    color:gray;
+    font-family: var(--font-poppins);
+    font-size:1rem;
+    font-weight: 400;
+}
+
+.pageContainer{
+
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+    width:100%;
+
+}
+
+.contentBox{
+    width:100%;
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+
+}
+
+
+.fullPage{
+
+    display:flex;
+    min-height: 100vh;
+    width:100%;
+    flex-direction: column;
+}
+
+.headerList{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0;
+    margin:0;
+    height:100%;
+    width:35%;
+    list-style-type:none;
+
+}
+
+.headerLinks{
+    text-decoration:none;
+    display:block;
+    padding-left:2vw;
+    padding-right:2vw;
+}
+
+.headerLinks > a{
+    color:gray;
+    text-decoration:none;
+}
+
+.headerLinks > a:hover{
+    color:white;
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:95%;
+    width:90%;
+    gap:10%;
+}
+
+.logoBox{
+    height:100%;
+    width:15%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    object-fit: contain;
+}
+
+.logoImg{
+    height:80%;
+}
+
+.logoImg > *{
+    height:100%;
+    width:auto;
+    border-radius: 50%;
+
+}
