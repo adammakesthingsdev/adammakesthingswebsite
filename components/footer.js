@@ -7,9 +7,9 @@ export default function Footer()
     return(
             <div className={styles.footer}>
                 <ul className={styles.footerList}>
-                    <FooterLink href="https://google.com" text="blog"/>
-                    <FooterLink href="https://google.com" text="contact"/>
-                    <FooterLink href="https://google.com" text="about"/>
+                    <FooterLink href="/posts/" text="blog"/>
+                    <FooterLink href="/contact" text="contact"/>
+                    <FooterLink href="/about" text="about"/>
                 </ul>
             </div>
     )
