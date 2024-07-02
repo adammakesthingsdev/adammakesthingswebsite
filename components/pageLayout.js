@@ -3,6 +3,7 @@ import textStyles from '/style/blog.module.css';
 import Footer from "/components/footer";
 
 import dynamic from 'next/dynamic'
+import MobileModal from './mobileModal';
 
 const Header = dynamic(() => import("./header"), {
   ssr: false
@@ -12,7 +13,10 @@ const Header = dynamic(() => import("./header"), {
 
 export default function Page({children,springy=true}){
     return(
+        <div>
+        <MobileModal/>
         <div className={styles.fullPage}>
+            
         <Header springy={springy}/>
         <div className={styles.pageContainer}>
             
@@ -22,7 +26,7 @@ export default function Page({children,springy=true}){
             <Footer/>
             
         </div>
-        </div>
+        </div></div>
     );
 }
 

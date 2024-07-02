@@ -162,3 +162,11 @@
     border-radius: 50%;
 
 }
+
+.menuButton{
+    color:white;
+}
+
+.menuButton:hover{
+    color:lightgray;
+}

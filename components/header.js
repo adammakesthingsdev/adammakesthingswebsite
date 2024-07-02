@@ -1,9 +1,10 @@
 import styles from '../style/page.module.css';
 import { useEffect, useState, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import MediaQuery from 'react-responsive';
 import Image from "next/image";
 import logo from '../public/Makes.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
  
 export default function Header(){
@@ -15,7 +16,7 @@ export default function Header(){
     }, [isMobile]);
 
     if(isMobile){
-        return(null);
+        return(MobileHeader());
     }
     else{
         return(DesktopHeader())
@@ -51,6 +52,19 @@ function DesktopHeader()
 
 function MobileHeader(){
     return(
-        <p>:P</p>
+        <div className={styles.stickyBox}>
+            <div className={styles.header}>
+                <div className={styles.navBar}>
+                <div className={styles.logoBox}>
+                        <a href="/" className={styles.logoImg}>
+                            <Image src={logo} alt="image of my logo"/>
+                        </a>
+                    </div> 
+                    <Link href='?modal=true' className={styles.menuButton}>
+                    <FontAwesomeIcon icon='fa-solid fa-bars'/>
+                    </Link>
+                </div>
+            </div>
+        </div>
     )
 }

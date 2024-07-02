@@ -37,7 +37,7 @@ export default function Contact()
     )
 }
 
-function LinkButton({icon,url,service,name}){
+export function LinkButton({icon,url,service,name}){
     return(
         <a href={url} className={contactStyles.linkHolder}>
             <div className={contactStyles.icon}>
