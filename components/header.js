@@ -1,5 +1,5 @@
 import styles from '../style/page.module.css';
-import { useEffect, useState, useRef } from 'react';
+import { useLayoutEffect, useState, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Image from "next/image";
 import logo from '../public/Makes.png';
@@ -10,7 +10,7 @@ import Link from 'next/link';
 export default function Header(){
     const isMobile = useMediaQuery({ query: '(max-width: 550px)' });
     const [hideOnMobile, setHideOnMobile] = useState(false);
-    useEffect(() => {
+    useLayoutEffect(() => {
         setHideOnMobile(isMobile);
         console.log(isMobile);
     }, [isMobile]);
