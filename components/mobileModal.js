@@ -18,7 +18,7 @@ export default function MobileModal(){
                         <li className={styles.menuitem}><Link href='/contact' className={styles.menutext}>Contact</Link></li>
                         <li className={styles.menuitem}><Link href='/posts' className={styles.menutext}>Blog</Link></li>
                         <li className={styles.menuitem}><Link href='/about' className={styles.menutext}>About</Link></li>
-                        <li className={styles.menuitem}><Link href='/evil' className={styles.menutext}>Evil</Link></li>
+                        <li className={styles.menuitem}><Link href='/evil' className={styles.menutext}>Evil?</Link></li>
                     </ul>
                 </div>
             </div>
