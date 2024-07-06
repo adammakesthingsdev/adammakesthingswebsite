@@ -1,0 +1,19 @@
+name: NextJS-Selfhosted-CI
+on:
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+    - name: Confirm node version
+      with:
+        node-version: 18
+    - name: Check dependency installation
+    - run: npm install
+    - name: Rebuild entire static site
+    - run: npm run build
+    - name: Redeploy site instance
+    - run: pm2 restart new-blog
