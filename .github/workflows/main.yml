@@ -8,9 +8,19 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v4
+      name: Checkout git
+
     - uses: actions/setup-node@v4
       with:
         node-version: 18
-    - run: npm install
-    - run: npm run build
-    - run: pm2 restart new-blog
+      name: Install and setup node
+
+    - uses: jongwooo/next-cache@v1
+      name: Retrieve cached build
+
+    - name: Install dependencies
+      run: npm install
+    - name: Build nextjs website
+      run: npm run build
+    - name: Redeploy and rerun website daemon
+      run: pm2 restart new-blog
