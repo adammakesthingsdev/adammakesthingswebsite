@@ -19,7 +19,7 @@
     border-left:2px solid darkgray;
     background-color:#0f0d0d;
 
-    z-index:101;
+    z-index:99999999999999999;
     position:absolute;
     align-items:center;
     justify-content: center;
@@ -30,7 +30,7 @@
 }
 
 .modalcontent{
-    width:80%;
+    width:100%;
     height:90%;
     display:flex;
     padding-left:0;
@@ -41,17 +41,32 @@
 .menulist{
     list-style: none;
     text-indent:0;
+    width:100%;
     padding-left:0;
     
 }
 
 .menuitem{
-    margin-bottom:3rem;
+    margin-bottom:1rem;
+    display:flex;
+    align-items: center;
+    border: 1px solid green;
 }
 
 .menutext{
     color:white;
     font-family:var(--font-poppins);
     font-size:2rem;
+    text-decoration: none;
 
+}
+
+.menutext:hover{
+    border: 1px solid red;
+}
+
+.faicon{
+    font-size:2rem;
+    margin-right: 1rem;
+    color:white;
 }

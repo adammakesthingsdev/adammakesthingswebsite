@@ -2,6 +2,7 @@
 import {useSearchParams, usePathname} from "next/navigation";
 import styles from '../style/modals.module.css';
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function MobileModal(){
     const searchParams = useSearchParams();
@@ -15,10 +16,10 @@ export default function MobileModal(){
                 <div className={styles.modalcontent}>
                     <Link href={pathname} className={styles.menutext}>Close</Link>
                     <ul className={styles.menulist}>
-                        <li className={styles.menuitem}><Link href='/contact' className={styles.menutext}>Contact</Link></li>
-                        <li className={styles.menuitem}><Link href='/posts' className={styles.menutext}>Blog</Link></li>
-                        <li className={styles.menuitem}><Link href='/about' className={styles.menutext}>About</Link></li>
-                        <li className={styles.menuitem}><Link href='/evil' className={styles.menutext}>Evil?</Link></li>
+                        <MenuItem link='/contact' text='Contact' icon='fa-solid fa-address-book'/>
+                        <MenuItem link='/about' text='About'icon='fa-solid fa-face-laugh'/>
+                        <MenuItem link='/posts' text='Blog'icon='fa-solid fa-newspaper'/>
+                        <MenuItem link='/evil' text='Evil'icon='fa-solid fa-handshake'/>
                     </ul>
                 </div>
             </div>
@@ -28,4 +29,13 @@ export default function MobileModal(){
     else{
         return(null)
     }
+}
+
+function MenuItem({link,text,icon}){
+    return(
+        <li className={styles.menuitem}>
+            <FontAwesomeIcon icon={icon} className={styles.faicon} fixedWidth/>
+            <Link href={link} className={styles.menutext}>{text}</Link>
+        </li>
+    )
 }

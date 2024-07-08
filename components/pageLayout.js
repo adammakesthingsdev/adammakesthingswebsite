@@ -5,19 +5,16 @@ import Footer from "/components/footer";
 import dynamic from 'next/dynamic'
 import MobileModal from './mobileModal';
 
-const Header = dynamic(() => import("./header"), {
-  ssr: false
-})
+import Header from './header';
 
+export default function Page({children}){
 
-
-export default function Page({children,springy=true}){
     return(
-        <div>
+        <div style={{"display":"contents"}}>
         <MobileModal/>
         <div className={styles.fullPage}>
             
-        <Header springy={springy}/>
+        <Header/>
         <div className={styles.pageContainer}>
             
             <div className={styles.contentBox}>
@@ -30,10 +27,10 @@ export default function Page({children,springy=true}){
     );
 }
 
-export function TextPage({children, springy=true})
+export function TextPage({children})
 {
     return(
-        <Page springy={springy}>
+        <Page>
             <div className={textStyles.textContent}>
                 <div className={textStyles.blogBody}>
                     {children}
