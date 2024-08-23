@@ -19,6 +19,9 @@
 # misc
 .DS_Store
 *.pem
+/pb_data
+pocketbase.exe
+/pb_migrations
 
 # debug
 npm-debug.log*
