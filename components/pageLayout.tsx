@@ -1,13 +1,12 @@
 import styles from '/style/page.module.css';
 import textStyles from '/style/blog.module.css';
-import Footer from "/components/footer";
-
 import dynamic from 'next/dynamic'
+
 import MobileModal from './mobileModal';
-
 import Header from './header';
+import Footer from './footer';
 
-export default function Page({children}){
+export default function Page({children}:any){
 
     return(
         <div style={{"display":"contents"}}>
@@ -27,7 +26,7 @@ export default function Page({children}){
     );
 }
 
-export function TextPage({children})
+export function TextPage({children}:any)
 {
     return(
         <Page>

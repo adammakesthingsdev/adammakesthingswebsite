@@ -30,7 +30,7 @@ export function getSortedPostsData() {
   });
   // Sort posts by date
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if (a < b) {
       return 1;
     } else {
       return -1;
@@ -39,55 +39,55 @@ export function getSortedPostsData() {
 }
 
 
-export function getAllPostIds(){
-    const fileNames = fs.readdirSync(postsDirectory);
+export function getAllPostIds() {
+  const fileNames = fs.readdirSync(postsDirectory);
 
-    return fileNames.map((fileName) => {
-        return {
-          params: {
-            id: fileName.replace(/\.md$/, ''),
-          },
-        };
-      });
+  return fileNames.map((fileName) => {
+    return {
+      params: {
+        id: fileName.replace(/\.md$/, ''),
+      },
+    };
+  });
 }
 
-export async function getPostData(id) {
-    const matterResult = getPostMetadeta(id);
-    const processedContent = await remark()
+export async function getPostData(id: string) {
+  const matterResult = getPostMetadeta(id);
+  const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
 
-    const contentHtml = processedContent.toString();
-  
-    // Combine the data with the id
-    return {
-      id,
-      contentHtml,
-      ...matterResult.data,
-    };
-  }
+  const contentHtml = processedContent.toString();
 
-export function getPostMetadeta(id){
+  // Combine the data with the id
+  return {
+    id,
+    contentHtml,
+    ...matterResult.data,
+  };
+}
+
+export function getPostMetadeta(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const matterResult=matter(fileContents);
+  const matterResult = matter(fileContents);
   //console.log(matterResult);
   return matterResult;
 }
 
-export async function getPostDataList(){
+export async function getPostDataList() {
   const allPages = getAllPostIds();
 
-  const postDatas= await Promise.all(allPages.map(async (post)=>{
-    const postData= await getPostData(post.params.id);
-    const path="/posts/"+postData.id;
-    return{
-      id:postData.id,
-      title:postData.title,
-      date:postData.date,
-      url:path,
-    }
-  }))
+  const postDatas = await Promise.all(allPages.map(async (post) => {
+    const postData = await getPostData(post.params.id);
+    const path = "/posts/" + postData.id;
+    return {
+      id: postData.id,
+      title: "myNewTitle",
+      date: "8/23/25",
+      url: path,
+    };
+  }));
   console.log(postDatas);
 
   return postDatas;

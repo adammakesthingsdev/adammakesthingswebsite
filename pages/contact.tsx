@@ -1,7 +1,9 @@
 import Page from "@/components/pageLayout";
-import styles from "/style/blog.module.css";
 import contactStyles from "/style/contact.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faDiscord, faGithub, faSlack } from "@fortawesome/free-brands-svg-icons";
 
 
 export default function Contact()
@@ -13,22 +15,22 @@ export default function Contact()
                 <h1>Get in touch</h1>
 
                 <LinkButton
-                    icon="fa-solid fa-envelope" 
+                    icon={faEnvelope} 
                     name="adam@adammakesthings.dev" 
                     service="Email" 
                     url="mailto:adam@adammakesthings.dev"/>
                 <LinkButton
-                    icon="fa-brands fa-slack" 
+                    icon={faSlack} 
                     name="@adammakesthings" 
                     service="Slack" 
                     url="https://hackclub.slack.com/team/U0641AYUJ91"/>
                 <LinkButton
-                    icon="fa-brands fa-github" 
+                    icon={faGithub} 
                     name="adammakesthingsdev" 
                     service="GitHub" 
                     url="https://github.com/adammakesthingsdev"/>
                 <LinkButton
-                    icon="fa-brands fa-discord" 
+                    icon={faDiscord} 
                     name="@adammakesthings" 
                     service="Discord" 
                     url="https://discord.com/users/1128330977500991629"/>               
@@ -37,7 +39,13 @@ export default function Contact()
     )
 }
 
-export function LinkButton({icon,url,service,name}){
+interface LinkButtonProps{
+    icon:IconProp;
+    url:string;
+    service:string;
+    name:string;
+}
+export function LinkButton({icon,url,service,name}:LinkButtonProps){
     return(
         <a href={url} className={contactStyles.linkHolder}>
             <div className={contactStyles.icon}>

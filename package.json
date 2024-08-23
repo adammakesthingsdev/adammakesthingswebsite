@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-common-types": "^6.6.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
@@ -27,7 +28,8 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "mini-css-extract-plugin": "^2.9.0"
+    "mini-css-extract-plugin": "^2.9.0",
+    "typescript-plugin-css-modules": "^5.1.0"
   },
   "browser": {
     "fs": false
