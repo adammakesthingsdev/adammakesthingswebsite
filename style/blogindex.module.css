@@ -14,26 +14,43 @@
     color:white;
 }
 
-.blogBody{
-    font-family: "Inter",var(--font-inter);
-    font-size: 1rem;
-    font-weight:400;
+.blogBody > a{
+    display:flex;
+    flex-direction: column;
+}
+
+.blogBody *{
     color:lightgray;
 }
 
-.blogBody:hover{
+.blogBody:hover *{
     color:white;
+}
+
+.blogBody h2{
+    font-family: var(--font-inter);
+    font-size: 2rem;
+    margin:0;
+}
+
+.blogBody h3{
+    font-family: var(--font-inter);
+    font-style: italic;
+    font-weight:400;
+    font-size:1.5rem;
+    margin:0;
+}
+
+.blogBody > * > time{
+    font-family: var(--font-poppins);
+    font-size: 1rem;
+    font-weight:4000;
+
+    margin-top:1rem;
 }
 
 .hr{
     border-top: 1px solid #49bc94;
-}
-
-.date{
-    font-family: var(--font-poppins);
-    font-size: 1rem;
-    font-weight:400;
-
 }
 
 .textContent{

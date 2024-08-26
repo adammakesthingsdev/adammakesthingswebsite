@@ -1,26 +1,19 @@
-import { getPostDataList } from '../../components/postdata';
+//import { getPostDataList } from '../../components/postdata';
 import styles from '../../style/blogindex.module.css';
 import Page from '@/components/pageLayout';
 import Head from 'next/head';
-import Date from '@/components/date';
-
-
-interface Post {
-    id: string;
-    title: string;
-    date: string;
-    url: string;
-}
+import Date, { ExpandedDate } from '@/components/date';
+import { getPosts, PostData } from '@/components/pocketbaseData';
 
 interface PostList {
     props: {
-        posts: Post[];
+        posts: PostData[];
     };
 }
 
-export async function getStaticProps():Promise<PostList> {
-    const metadata = await getPostDataList();
-    console.log(metadata);
+export async function getServerSideProps() {
+    const metadata = await getPosts();
+    //console.log(metadata);
     return {
         props: {
             posts: metadata
@@ -28,9 +21,9 @@ export async function getStaticProps():Promise<PostList> {
     };
 };
 
-export default function BlogIndex({ posts }:PostList["props"]) {
+export default function BlogIndex({ posts }: PostList["props"]) {
     return (
-        <Page springy={false}>
+        <Page>
             <Head>
                 <title>Blog Index</title>
             </Head>
@@ -46,15 +39,16 @@ export default function BlogIndex({ posts }:PostList["props"]) {
 }
 
 
-function BlogEntry({ post }:{post:Post}) {
+function BlogEntry({ post }: { post: PostData; }) {
     console.log(post);
     return (
         <li className={styles.list}>
             <hr className={styles.hr}></hr>
-            <div>
-                <a className={styles.blogBody} href={post.url}>
-                    <h2>{post.title}</h2>
-                    <h3 className={styles.date}>{post.date}</h3>
+            <div className={styles.blogBody}>
+                <a href={`/posts/${post.urlTitle}`}>
+                    <h2>{post.Title}</h2>
+                    {post.subtitle!="" ? <h3>{post.subtitle}</h3>:null}
+                    <ExpandedDate pbTime={post.created}/>
                 </a>
             </div>
         </li>
